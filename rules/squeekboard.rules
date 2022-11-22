@@ -1,0 +1,4 @@
+## Enable/disable Squeekboard when external mouse/keyboard is detected
+
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", RUN+="/usr/bin/hostnamectl set-chassis laptop" 
+SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", RUN+="/usr/bin/hostnamectl set-chassis handset"

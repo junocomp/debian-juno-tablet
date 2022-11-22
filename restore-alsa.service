@@ -1,0 +1,16 @@
+[Unit]
+Description=Restore ALSA volume for Juno Tablets
+#After=phosh.service
+
+[Service]
+#Type=idle
+Type=simple
+#ExecStart=/usr/bin/restore-alsa
+ExecStartPost=/bin/sleep 60
+ExecStart=sh /usr/bin/restore-alsa.sh
+#RemainAfterExit=true
+#RestartSec=1
+
+[Install]
+#WantedBy=multi-user.target
+WantedBy=default.target

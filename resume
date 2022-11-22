@@ -1,0 +1,3 @@
+swap="$(lsblk | grep SWAP | awk '{print $1}' | tr -d '└─')"
+
+RESUME=/dev/$swap

@@ -1,0 +1,10 @@
+############################################
+##           Juno Computers Ltd.          ##
+##   Powertop Settings for Juno Laptops   ##
+##        https://junocomputers.com       ##
+############################################
+
+# ------------------------------------------------------------------------------
+
+SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/usr/sbin/powertop --auto-tune"
+#SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/usr/sbin/powertop --auto-tune"

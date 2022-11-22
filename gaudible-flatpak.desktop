@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/gaudible-flatpak --filter geary-flatpak
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=GAudible
+Name=GAudible
+Comment[en_US]=
+Comment=

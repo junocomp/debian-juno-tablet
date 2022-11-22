@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Enable suspend-then-hibernate
+rm /usr/lib/systemd/system/systemd-suspend.service;
+ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /usr/lib/systemd/system/systemd-suspend.service;
+
+# Recopy HiFi.conf to ucm2
+rm /usr/share/alsa/ucm2/Intel/sof-essx8336/HiFi.conf;
+cp /usr/share/suspend-then-hibernate/HiFi.conf /usr/share/alsa/ucm2/Intel/sof-essx8336/;

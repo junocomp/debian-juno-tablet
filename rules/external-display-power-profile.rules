@@ -1,0 +1,12 @@
+############################################
+##           Juno Computers Ltd.          ##
+##   Powertop Settings for Juno Laptops   ##
+##        https://junocomputers.com       ##
+############################################
+
+# When an external monitor is plugged in it will switch power to Ondemand
+
+# ------------------------------------------------------------------------------
+
+KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/usr/bin/powerprofilesctl set balanced"
+

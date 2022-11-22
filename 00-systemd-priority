@@ -1,0 +1,4 @@
+Package: systemd systemd-resolved libnss-systemd libpam-systemd libsystemd-shared libsystemd0
+Pin: version 251.6-1
+Pin-Priority: 1001
+

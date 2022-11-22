@@ -1,0 +1,2 @@
+DPkg::Post-Invoke { '/usr/share/suspend-then-hibernate/juno-suspend';};
+

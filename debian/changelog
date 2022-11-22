@@ -1,0 +1,5 @@
+juno-tablet (0.1.4-3) unstable; urgency=low
+
+  * Remove es8336-dkms
+  
+ -- Juno <junocomputers@outlook.com>  Sat, 12 Nov 2022 08:01:52 +0000

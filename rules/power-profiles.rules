@@ -1,0 +1,10 @@
+############################################
+##           Juno Computers Ltd.          ##
+##   Powertop Settings for Juno Laptops   ##
+##        https://junocomputers.com       ##
+############################################
+
+# ------------------------------------------------------------------------------
+
+SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/usr/bin/powerprofilesctl set power-saver"
+SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/usr/bin/powerprofilesctl set balanced"

@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# Set chassis to handset
+#hostnamectl set-chassis handset
+#cat /etc/machine-info
+
+# GRUB
+#sed -i -e '/GRUB_TIMEOUT/d' /etc/default/grub
+#sed -i '/\GRUB_DEFAULT/a GRUB_TIMEOUT=0' /etc/default/grub
+#sed -i -e '/GRUB_TIMEOUT_STYLE/d' /etc/default/grub
+#sed -i '/\GRUB_TIMEOUT/a GRUB_TIMEOUT_STYLE=hidden' /etc/default/grub
+sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT/d' /etc/default/grub
+sed -i '/\GRUB_DISTRIBUTOR/a GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=s2idle"' /etc/default/grub
+update-grub
+
+hostnamectl set-chassis handset
+
+# Flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Remove Trusted keys
+cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
+
+# Update topologis for essx8336 - Remove this when v2.2 is updated
+#cd tmp
+#wget -c https://github.com/thesofproject/linux/files/9280208/es8336_topologies_main.tar.gz
+#tar xf es8336_topologies_main.tar.gz -C /usr/lib/firmware/intel/sof-tplg/
+#rm es8336_topologies_main.tar.gz
+
+# Recopy HiFi.conf to ucm2
+rm /usr/share/alsa/ucm2/Intel/sof-essx8336/HiFi.conf;
+cp /usr/share/suspend-then-hibernate/HiFi.conf /usr/share/alsa/ucm2/Intel/sof-essx8336/;
+alsaucm reload
+
+# Disable Suspend and replace it with Suspend-then-Hibernate
+rm /usr/lib/systemd/system/systemd-suspend.service
+ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /usr/lib/systemd/system/systemd-suspend.service
+
+# Enable Powertop
+systemctl enable powertop
+systemctl start powertop
+systemctl enable powertop-usb-mouse
+systemctl start powertop-usb-mouse
+
+# Reload systemd for suspend-then-hibernate
+systemctl daemon-reload
+
+# Enable suspend-then-hibernate in logind.conf
+#sed -i -e '/HandleLidSwitch/d' /etc/systemd/logind.conf
+#sed -i '/\#HandleHibernateKey=hibernate/a HandleLidSwitch=suspend-then-hibernate' /etc/systemd/logind.conf
+
+# Hibernate starts in 5 minutes after suspend
+#sed -i -e '/HibernateDelaySec/d' /etc/systemd/sleep.conf
+#sed -i '/\#HybridSleepState/a HibernateDelaySec=300s' /etc/systemd/sleep.conf
+
+# Update initramfs
+update-initramfs -u -k all
+
+# Update schemas
+glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+# Update systemd
+systemd-hwdb update
+udevadm trigger -v -p DEVNAME=/dev/iio:device0
+udevadm control --reload
+udevadm trigger
+
+updatedb
+
+echo "Please restart tablet for updated packages to take effect"
+

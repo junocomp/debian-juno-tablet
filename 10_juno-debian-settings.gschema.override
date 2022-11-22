@@ -1,0 +1,23 @@
+##########################
+# Juno Computers US & UK #
+##########################
+
+[org.gnome.desktop.sound]
+allow-volume-above-100-percent = true
+theme-name = 'librem5'
+
+[org.gnome.desktop.interface]
+clock-show-date = true
+clock-format = '12h'
+clock-show-weekday = true
+show-battery-percentage = true
+
+[sm.puri.phosh]
+app-filter-mode = []
+automatic-high-contrast = true
+
+[sm.puri.Chatty]
+experimental-features = true
+
+[org.gnome.settings-daemon.plugins.power]
+sleep-inactive-ac-type = 'nothing'
