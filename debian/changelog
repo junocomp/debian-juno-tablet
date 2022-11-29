@@ -1,5 +1,5 @@
-juno-tablet (0.1.4-3) unstable; urgency=low
+juno-tablet (0.1.4-4) unstable; urgency=low
 
-  * Remove es8336-dkms
+  * Added intel-microcode
   
- -- Juno <junocomputers@outlook.com>  Sat, 12 Nov 2022 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Tue, 29 Nov 2022 08:01:52 +0000
