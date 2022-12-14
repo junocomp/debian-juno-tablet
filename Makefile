@@ -59,6 +59,8 @@ install-core:
 	install -Dpm 0644 juno-debian.list $(DESTDIR)/etc/apt/sources.list.d/juno-debian.list
 	install -Dpm 0644 00-systemd-priority $(DESTDIR)/etc/apt/preferences.d/00-systemd-priority
 	install -Dpm 0644 00-linux-juno $(DESTDIR)/etc/apt/preferences.d/00-linux-juno
+	install -Dpm 0755 juno-pp $(DESTDIR)/usr/bin/juno-pp
+	install -Dpm 0644 juno-pp.service $(DESTDIR)/etc/systemd/system/juno-pp.service
 
 install: install-core
 
@@ -100,4 +102,5 @@ uninstall:
 	rm -f $(DESTDIR)/etc/apt/sources.list.d/juno-debian.list
 	rm -f $(DESTDIR)/etc/apt/preferences.d/00-systemd-priority
 	rm -f $(DESTDIR)/etc/apt/preferences.d/00-linux-juno
-
+	rm -f $(DESTDIR)/usr/bin/juno-pp
+	rm -f $(DESTDIR)/etc/systemd/system/juno-pp.service
