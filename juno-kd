@@ -1,0 +1,12 @@
+#!/bin/bash
+
+keyboard=$(lsusb -v 2>/dev/null | egrep '(^Bus|Keyboard|Mouse)' | grep -B1 Keyboard)
+
+if [[ $keyboard ]]; then
+	echo "keyboard found";
+	hostnamectl set-chassis laptop;
+else
+	echo "keyboard not found";
+	hostnamectl set-chassis handset;
+fi
+
