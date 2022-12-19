@@ -42,6 +42,7 @@ systemctl start powertop
 systemctl enable powertop-usb-mouse
 systemctl start powertop-usb-mouse
 systemctl enable juno-pp
+systemctl enable juno-kd
 
 # Reload systemd for suspend-then-hibernate
 systemctl daemon-reload
