@@ -1,5 +1,5 @@
-juno-tablet (0.1.8-1) unstable; urgency=low
+juno-tablet (0.1.8-2) unstable; urgency=low
 
-  * Added Juno Keyboard Detect
+  * Added acpi dependency
   
- -- Juno <junocomputers@outlook.com>  Mon, 19 Dec 2022 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Thu, 29 Dec 2022 08:01:52 +0000
