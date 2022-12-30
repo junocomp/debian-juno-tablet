@@ -52,7 +52,8 @@ Depends: hwinfo,
 	 webapp-manager,
 	 nano,
 	 openssh-server,
-	 intel-microcode
+	 intel-microcode,
+	 acpi
 Conflicts: es8336-dkms
 Homepage: https://junocomputers.com
 Description: Drivers for Juno Tablet
