@@ -56,7 +56,7 @@ install-core:
 	install -Dpm 0644 rules/squeekboard.rules $(DESTDIR)/etc/udev/rules.d/squeekboard.rules
 	install -Dpm 0644 juno.pa $(DESTDIR)/etc/pulse/default.pa.d/juno.pa
 	install -Dpm 0644 rules/external-display-power-profile.rules $(DESTDIR)/etc/udev/rules.d/external-display-power-profile.rules
-	install -Dpm 0644 juno-debian.list $(DESTDIR)/etc/apt/sources.list.d/juno-debian.list
+	#install -Dpm 0644 juno-debian.list $(DESTDIR)/etc/apt/sources.list.d/juno-debian.list
 	install -Dpm 0644 00-systemd-priority $(DESTDIR)/etc/apt/preferences.d/00-systemd-priority
 	#install -Dpm 0644 00-linux-juno $(DESTDIR)/etc/apt/preferences.d/00-linux-juno
 	install -Dpm 0755 juno-pp $(DESTDIR)/usr/bin/juno-pp
@@ -101,7 +101,7 @@ uninstall:
 	rm -f $(DESTDIR)/etc/udev/rules.d/external-display-power-profile.rules
 	#rm -f $(DESTDIR)/usr/bin/restore-headphone-mic
 	rm -f $(DESTDIR)/usr/bin/alsa-info
-	rm -f $(DESTDIR)/etc/apt/sources.list.d/juno-debian.list
+	#rm -f $(DESTDIR)/etc/apt/sources.list.d/juno-debian.list
 	rm -f $(DESTDIR)/etc/apt/preferences.d/00-systemd-priority
 	#rm -f $(DESTDIR)/etc/apt/preferences.d/00-linux-juno
 	rm -f $(DESTDIR)/usr/bin/juno-pp
