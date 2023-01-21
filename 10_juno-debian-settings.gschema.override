@@ -21,3 +21,9 @@ experimental-features = true
 
 [org.gnome.settings-daemon.plugins.power]
 sleep-inactive-ac-type = 'nothing'
+
+[org.gnome.nautilus.preferences]
+click-policy = 'single'
+
+[org.gnome.nautilus.icon-view]
+default-zoom-level = 'large'
