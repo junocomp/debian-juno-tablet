@@ -1,7 +1,7 @@
 Package: linux-headers-amd64 linux-image-amd64
-Pin: version 6.0.7-1juno
+Pin: version 6.1.4-1
 Pin-Priority: 1001
 
-Package: linux-headers-6.0.7 linux-image-6.0.7
-Pin: version 6.0.7-1
+Package: linux-headers-6.1.0-1-amd linux-image-6.1.0-1-amd
+Pin: version 6.1.4-1
 Pin-Priority: 1001
