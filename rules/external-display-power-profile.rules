@@ -1,5 +1,5 @@
 ############################################
-##           Juno Computers Ltd.          ##
+##              Juno Computers            ##
 ##   Powertop Settings for Juno Laptops   ##
 ##        https://junocomputers.com       ##
 ############################################
@@ -8,5 +8,4 @@
 
 # ------------------------------------------------------------------------------
 
-KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/usr/bin/powerprofilesctl set balanced"
-
+KERNEL=="card0", SUBSYSTEM=="drm", ACTION=="change", RUN+="/usr/bin/juno-monitor"
