@@ -63,6 +63,7 @@ install-core:
 	install -Dpm 0644 juno-pp.service $(DESTDIR)/etc/systemd/system/juno-pp.service
 	install -Dpm 0755 juno-kd $(DESTDIR)/usr/bin/juno-kd
 	install -Dpm 0644 juno-kd.service $(DESTDIR)/etc/systemd/system/juno-kd.service
+	install -Dpm 0755 juno-monitor $(DESTDIR)/usr/bin/juno-monitor
 
 install: install-core
 
@@ -108,3 +109,4 @@ uninstall:
 	rm -f $(DESTDIR)/etc/systemd/system/juno-pp.service
 	rm -f $(DESTDIR)/usr/bin/juno-kd
 	rm -f $(DESTDIR)/etc/systemd/system/juno-kd.service
+	rm -f $(DESTDIR)/usr/bin/juno-monitor
