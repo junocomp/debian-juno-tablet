@@ -1,0 +1,47 @@
+#!/bin/sh
+
+dp=$(cat /sys/class/drm/card0-DP-1/status)
+hdmi1=$(cat /sys/class/drm/card0-HDMI-A-1/status)
+hdmi2=$(cat /sys/class/drm/card0-HDMI-A-2/status)
+
+# Display Port
+case "$dp" in
+    connected)
+    /usr/bin/powerprofilesctl set balanced;
+    /usr/bin/turbo-on;
+    echo "Display Port Connected";
+    ;;
+    disconnected)
+    /usr/bin/powerprofilesctl set power-saver;
+    /usr/bin/juno-pp
+    echo "Display Port Connected"
+    ;;
+esac
+
+# HDMI-1
+case "$dp" in
+    connected)
+    /usr/bin/powerprofilesctl set balanced;
+    /usr/bin/turbo-on;
+    echo "Display Port Connected";
+    ;;
+    disconnected)
+    /usr/bin/powerprofilesctl set power-saver;
+    /usr/bin/juno-pp
+    echo "Display Port Connected"
+    ;;
+esac
+
+# HDMI-2
+case "$dp" in
+    connected)
+    /usr/bin/powerprofilesctl set balanced;
+    /usr/bin/turbo-on;
+    echo "Display Port Connected";
+    ;;
+    disconnected)
+    /usr/bin/powerprofilesctl set power-saver;
+    /usr/bin/juno-pp
+    echo "Display Port Connected"
+    ;;
+esac
