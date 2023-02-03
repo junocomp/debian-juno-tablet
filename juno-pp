@@ -2,10 +2,25 @@
 
 ac_adapter=$(acpi -a | cut -d' ' -f3 | cut -d- -f1)
 
-if [ "$ac_adapter" = "on" ]; then
-    /usr/bin/powerprofilesctl set balanced
-    echo "Power Profiles set to Balanced"
-else
-    /usr/bin/powerprofilesctl set power-saver
-    echo "Power Profiles set to Power Saver"
-fi
+#if [ "$ac_adapter" = "on" ]; then
+#    /usr/bin/powerprofilesctl set balanced;
+#    /usr/bin/turbo-on;
+#    echo "Power Profiles set to Balanced"
+#else
+#    /usr/bin/powerprofilesctl set power-saver;
+#    /usr/bin/turbo-off;
+#    echo "Power Profiles set to Power Saver"
+#fi
+
+case "$ac_adapter" in
+    on)
+    /usr/bin/powerprofilesctl set balanced;
+    /usr/bin/turbo-on;
+    echo "Power Profiles set to Balanced";
+    ;;
+    off)
+    /usr/bin/powerprofilesctl set power-saver;
+    /usr/bin/turbo-off;
+    echo "Power Profiles set to Power Saver";
+    ;;
+esac
