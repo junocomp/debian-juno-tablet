@@ -1,5 +1,5 @@
-juno-tablet (0.1.12) unstable; urgency=low
+juno-tablet (0.1.16-1) unstable; urgency=low
 
-  * Improved Power Profiles for external monitors
+  * Added non-free-firmware
   
- -- Juno <junocomputers@outlook.com>  Fri, 3 Feb 2023 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Mon, 17 Apr 2023 08:01:52 +0000

@@ -18,15 +18,6 @@ update-grub
 # Flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Remove Trusted keys
-#cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
-
-# Update topologis for essx8336 - Remove this when v2.2 is updated
-#cd tmp
-#wget -c https://github.com/thesofproject/linux/files/9280208/es8336_topologies_main.tar.gz
-#tar xf es8336_topologies_main.tar.gz -C /usr/lib/firmware/intel/sof-tplg/
-#rm es8336_topologies_main.tar.gz
-
 # Recopy HiFi.conf to ucm2
 rm /usr/share/alsa/ucm2/Intel/sof-essx8336/HiFi.conf;
 cp /usr/share/suspend-then-hibernate/HiFi.conf /usr/share/alsa/ucm2/Intel/sof-essx8336/;
@@ -36,16 +27,18 @@ alsaucm reload
 rm /usr/lib/systemd/system/systemd-suspend.service
 ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /usr/lib/systemd/system/systemd-suspend.service
 
-# Enable Powertop
+# Enable Systemd services
 systemctl enable powertop
 systemctl start powertop
-systemctl enable powertop-usb-mouse
-systemctl start powertop-usb-mouse
+#systemctl enable powertop-usb-mouse
+#systemctl start powertop-usb-mouse
 systemctl enable juno-pp
 systemctl enable juno-kd
 
 # Reload systemd for suspend-then-hibernate
 systemctl daemon-reload
+systemctl stop powertop
+systemctl start powertop
 
 # Enable suspend-then-hibernate in logind.conf
 #sed -i -e '/HandleLidSwitch/d' /etc/systemd/logind.conf
@@ -68,6 +61,11 @@ udevadm control --reload
 udevadm trigger
 
 updatedb
+
+# Remove non-free from sources.list
+sed -i 's/non-free-firmware//g' /etc/apt/sources.list
+sed -i 's/non-free//g' /etc/apt/sources.list
+sed -i 's/contrib//g' /etc/apt/sources.list
 
 echo "Please restart tablet for updated packages to take effect"
 

@@ -52,7 +52,10 @@ Depends: hwinfo,
 	 nano,
 	 openssh-server,
 	 intel-microcode,
-	 acpi
+	 amd64-microcode,
+	 acpi,
+	 qgnomeplatform-qt5,
+	 sound-icons
 Conflicts: es8336-dkms
 Homepage: https://junocomputers.com
 Description: Drivers for Juno Tablet
