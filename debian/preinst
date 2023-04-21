@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#if [ -f /etc/apt/preferences.d/00-linux-juno ]; then
-#   rm /etc/apt/preferences.d/00-linux-juno;
-#fi
+if [ -f /etc/apt/preferences.d/00-systemd-priority ]; then
+   rm /etc/apt/preferences.d/00-systemd-priority;
+fi
 
 systemctl disable powertop
 #systemctl disable powertop-usb-mouse

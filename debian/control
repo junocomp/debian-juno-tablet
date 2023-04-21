@@ -55,7 +55,8 @@ Depends: hwinfo,
 	 amd64-microcode,
 	 acpi,
 	 qgnomeplatform-qt5,
-	 sound-icons
+	 sound-icons,
+	 ntfs-3g
 Conflicts: es8336-dkms
 Homepage: https://junocomputers.com
 Description: Drivers for Juno Tablet

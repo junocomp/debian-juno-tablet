@@ -5,12 +5,9 @@
 #cat /etc/machine-info
 
 # GRUB
-#sed -i -e '/GRUB_TIMEOUT/d' /etc/default/grub
-#sed -i '/\GRUB_DEFAULT/a GRUB_TIMEOUT=0' /etc/default/grub
-#sed -i -e '/GRUB_TIMEOUT_STYLE/d' /etc/default/grub
-#sed -i '/\GRUB_TIMEOUT/a GRUB_TIMEOUT_STYLE=hidden' /etc/default/grub
-sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT/d' /etc/default/grub
-sed -i '/\GRUB_DISTRIBUTOR/a GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=s2idle"' /etc/default/grub
+#sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT/d' /etc/default/grub
+#sed -i '/\GRUB_DISTRIBUTOR/a GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=s2idle"' /etc/default/grub
+sed -i 's/mem_sleep_default=s2idle//g' /etc/default/grub
 update-grub
 
 #hostnamectl set-chassis handset
