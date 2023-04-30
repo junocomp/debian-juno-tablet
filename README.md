@@ -13,12 +13,6 @@ Debian drivers for Juno Tablet
 
 ```sudo apt install juno-tablet```
 
-Re run update and downgrade ```systemd``` to v251 otherwise ```Hibernate``` will not work.
-
-```sudo apt update```
-
-```sudo apt install systemd```
-
 ####################
 
 <a href="https://junocomputers.com">https://junocomputers.com</a>
