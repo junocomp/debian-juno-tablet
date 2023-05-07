@@ -15,7 +15,8 @@ install-core:
 	install -dm755 $(DESTDIR)/etc/initramfs-tools
 	install -dm755 $(DESTDIR)/usr/share/glib-2.0/schemas/
 	install -dm755 $(DESTDIR)/etc/apt/sources.list.d/
-	install -dm755 $(DESTDIR)/etc/profile.d/
+	#install -dm755 $(DESTDIR)/etc/profile.d/
+	install -dm755 $(DESTDIR)/etc/environment.d/
 	install -dm755 $(DESTDIR)/etc/apt/apt.conf.d
 	install -dm755 $(DESTDIR)/etc/systemd/logind.conf.d
 	install -dm755 $(DESTDIR)/etc/systemd/sleep.conf.d
@@ -43,9 +44,10 @@ install-core:
 	#install -Dpm 0644 restore-alsa.desktop $(DESTDIR)/etc/xdg/autostart/restore-alsa.desktop
 	install -Dpm 0644 resume $(DESTDIR)/etc/initramfs-tools/resume
 	install -Dpm 0644 10_juno-debian-settings.gschema.override $(DESTDIR)/usr/share/glib-2.0/schemas/10_juno-debian-settings.gschema.override
-	install -Dpm 0644 61-sensor-local.hwdb $(DESTDIR)/etc/udev/hwdb.d/61-sensor-local.hwdb
+	#install -Dpm 0644 61-sensor-local.hwdb $(DESTDIR)/etc/udev/hwdb.d/61-sensor-local.hwdb
 	install -Dpm 0755 alsa $(DESTDIR)/usr/sbin/alsa
-	install -Dpm 0755 juno-profile.sh $(DESTDIR)/etc/profile.d/juno-profile.sh
+	#install -Dpm 0644 juno-profile.sh $(DESTDIR)/etc/profile.d/juno-profile.sh
+	install -Dpm 0644 juno-env.conf $(DESTDIR)/etc/environment.d/juno-env.conf
 	install -Dpm 0644 rules/power-profiles.rules $(DESTDIR)/etc/udev/rules.d/power-profiles.rules
 	install -Dpm 0644 rules/powertop.rules $(DESTDIR)/etc/udev/rules.d/powertop.rules
 	install -Dpm 0644 suspend-then-hibernate/90suspend-then-hibernate $(DESTDIR)/etc/apt/apt.conf.d/90suspend-then-hibernate
@@ -91,7 +93,7 @@ uninstall:
 	rm -f $(DESTDIR)/etc/initramfs-tools/resume
 	rm -f $(DESTDIR)/usr/share/glib-2.0/schemas/10_juno-debian-settings.gschema.override
 	rm -f $(DESTDIR)/etc/apt/sources.list.d/debian-non-free.list
-	rm -f $(DESTDIR)/etc/udev/hwdb.d/61-sensor-local.hwdb
+	#rm -f $(DESTDIR)/etc/udev/hwdb.d/61-sensor-local.hwdb
 	rm -f $(DESTDIR)/usr/sbin/alsa
 	rm -f $(DESTDIR)/etc/profile.d/juno-profile.sh
 	rm -f $(DESTDIR)/etc/udev/rules.d/powertop.rules
