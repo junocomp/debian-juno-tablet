@@ -4,5 +4,9 @@ if [ -f /etc/apt/preferences.d/00-systemd-priority ]; then
    rm /etc/apt/preferences.d/00-systemd-priority;
 fi
 
+if [ -f /etc/profile.d/juno-profile.sh ]; then
+   rm /etc/profile.d/juno-profile.sh;
+fi
+
 systemctl disable powertop
 #systemctl disable powertop-usb-mouse
