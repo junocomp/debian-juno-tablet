@@ -16,11 +16,14 @@ case "$ac_adapter" in
     on)
     /usr/bin/powerprofilesctl set balanced;
     /usr/bin/turbo-on;
+    /usr/sbin/iw wlp0s20f3 set power_save off;
     echo "Power Profiles set to Balanced";
     ;;
     off)
     /usr/bin/powerprofilesctl set power-saver;
     /usr/bin/turbo-off;
+    /usr/sbin/iw wlp0s20f3 set power_save on;
     echo "Power Profiles set to Power Saver";
     ;;
 esac
+
