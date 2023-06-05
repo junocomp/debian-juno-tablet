@@ -16,6 +16,9 @@ show-battery-percentage = true
 app-filter-mode = []
 automatic-high-contrast = true
 
+[sm.puri.phosh.notifications]
+wakeup-screen-triggers = 'category'
+
 [sm.puri.Chatty]
 experimental-features = true
 
