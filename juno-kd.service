@@ -1,6 +1,6 @@
 [Unit]
 Description=Juno Keyboard Detect
-After=phosh.service, greetd.service
+After=greetd.service
 
 [Service]
 Type=oneshot
