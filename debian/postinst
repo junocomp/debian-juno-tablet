@@ -1,12 +1,6 @@
 #!/bin/bash
 
-# Set chassis to handset
-#hostnamectl set-chassis handset
-#cat /etc/machine-info
-
 # GRUB
-#sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT/d' /etc/default/grub
-#sed -i '/\GRUB_DISTRIBUTOR/a GRUB_CMDLINE_LINUX_DEFAULT="quiet splash mem_sleep_default=s2idle"' /etc/default/grub
 sed -i 's/mem_sleep_default=s2idle//g' /etc/default/grub
 update-grub
 
@@ -27,8 +21,6 @@ ln -s /usr/lib/systemd/system/systemd-suspend-then-hibernate.service /usr/lib/sy
 # Enable Systemd services
 systemctl enable powertop
 systemctl start powertop
-#systemctl enable powertop-usb-mouse
-#systemctl start powertop-usb-mouse
 systemctl enable juno-pp
 systemctl enable juno-kd
 
@@ -37,14 +29,6 @@ systemctl daemon-reload
 systemctl stop powertop
 systemctl start powertop
 
-# Enable suspend-then-hibernate in logind.conf
-#sed -i -e '/HandleLidSwitch/d' /etc/systemd/logind.conf
-#sed -i '/\#HandleHibernateKey=hibernate/a HandleLidSwitch=suspend-then-hibernate' /etc/systemd/logind.conf
-
-# Hibernate starts in 5 minutes after suspend
-#sed -i -e '/HibernateDelaySec/d' /etc/systemd/sleep.conf
-#sed -i '/\#HybridSleepState/a HibernateDelaySec=300s' /etc/systemd/sleep.conf
-
 # Update initramfs
 update-initramfs -u -k all
 
@@ -52,10 +36,10 @@ update-initramfs -u -k all
 glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 # Update systemd
-systemd-hwdb update
-udevadm trigger -v -p DEVNAME=/dev/iio:device0
-udevadm control --reload
-udevadm trigger
+#systemd-hwdb update
+#udevadm trigger -v -p DEVNAME=/dev/iio:device0
+#udevadm control --reload
+#udevadm trigger
 
 updatedb
 

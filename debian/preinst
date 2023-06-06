@@ -4,6 +4,14 @@ if [ -f /etc/apt/preferences.d/00-systemd-priority ]; then
    rm /etc/apt/preferences.d/00-systemd-priority;
 fi
 
+if [ -f /etc/apt/preferences.d/00-linux-juno ]; then
+   rm /etc/apt/preferences.d/00-linux-juno;
+fi
+
+if [ -f /etc/udev/rules.d/99-inverted-touchscreen.rules ]; then
+   rm /etc/udev/rules.d/99-inverted-touchscreen.rules;
+fi
+
 if [ -f /etc/profile.d/juno-profile.sh ]; then
    rm /etc/profile.d/juno-profile.sh;
 fi
