@@ -66,6 +66,7 @@ install-core:
 	install -Dpm 0644 override.conf $(DESTDIR)/etc/systemd/system/powertop.service.d/override.conf
 	install -Dpm 0644 debian.sources $(DESTDIR)/etc/apt/sources.list.d/debian.sources
 	install -Dpm 0755 terminal-clean $(DESTDIR)/usr/bin/terminal-clean
+	install -Dpm 0644 61-sensor-local.hwdb $(DESTDIR)/etc/udev/hwdb.d/61-sensor-local.hwdb
 
 install: install-core
 
