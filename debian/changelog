@@ -1,6 +1,6 @@
-juno-tablet (0.1.20) unstable; urgency=low
+juno-tablet (0.1.20-1) unstable; urgency=low
 
   * Upgraded to kernel 6.3
   * Suspend support (no longer depends on Hibernate)
   
- -- Juno <junocomputers@outlook.com>  Tue, 6 Jun 2023 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Thu, 8 Jun 2023 08:01:52 +0000
