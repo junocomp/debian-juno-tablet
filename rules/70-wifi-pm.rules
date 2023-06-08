@@ -1,3 +1,7 @@
+# Juno Tab 1
 SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/usr/sbin/iw wlp0s20f3 set power_save off"
 SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/usr/sbin/iw wlp0s20f3 set power_save on"
 
+# Juno Tab 2
+SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/usr/sbin/iw wlp1s0 set power_save off"
+SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/usr/sbin/iw wlp1s0 set power_save on"
