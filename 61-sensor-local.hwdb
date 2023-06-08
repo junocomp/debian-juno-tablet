@@ -1,4 +1,7 @@
-# DERE DBook D10
+# Juno Tablet 1
 sensor:modalias:acpi:KIOX000A*:dmi:bvnAmericanMegatrendsInternational,LLC.:bvrJP2V*:svnDefaultstring:*
  ACCEL_MOUNT_MATRIX=1, 0, 0; 0, -1, 0; 0, 0, 1
-
+ 
+# Juno Tablet 2 
+sensor:modalias:acpi:NSA2513*:dmi:*:svnDigitek:*
+ ACCEL_MOUNT_MATRIX=0, -1, 0; 1, 0, 0; 0, 0, 1 
