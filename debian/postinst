@@ -36,10 +36,10 @@ update-initramfs -u -k all
 glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 # Update systemd
-#systemd-hwdb update
-#udevadm trigger -v -p DEVNAME=/dev/iio:device0
-#udevadm control --reload
-#udevadm trigger
+systemd-hwdb update
+udevadm trigger -v -p DEVNAME=/dev/iio:device0
+udevadm control --reload
+udevadm trigger
 
 updatedb
 
