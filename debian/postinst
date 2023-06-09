@@ -23,6 +23,7 @@ systemctl enable powertop
 systemctl start powertop
 systemctl enable juno-pp
 systemctl enable juno-kd
+systemctl enable upower
 
 # Reload systemd for suspend-then-hibernate
 systemctl daemon-reload
