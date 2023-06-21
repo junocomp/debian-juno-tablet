@@ -1,0 +1,11 @@
+#!/bin/bash
+tablet="$(awk '{print substr($0,0,3);}' /sys/class/dmi/id/bios_version)"
+
+# Recopy HiFi.conf to ucm2
+case "$tablet" in
+     JP2)
+     rm /usr/share/alsa/ucm2/Intel/sof-essx8336/HiFi.conf;
+     cp /usr/share/suspend-then-hibernate/HiFi.conf /usr/share/alsa/ucm2/Intel/sof-essx8336/;
+     alsaucm reload
+     ;;
+esac  
