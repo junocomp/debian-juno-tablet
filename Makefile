@@ -49,6 +49,8 @@ install-core:
 	install -Dpm 0644 rules/powertop.rules $(DESTDIR)/etc/udev/rules.d/powertop.rules
 	install -Dpm 0644 suspend-then-hibernate/90suspend-then-hibernate $(DESTDIR)/etc/apt/apt.conf.d/90suspend-then-hibernate
 	install -Dpm 0755 suspend-then-hibernate/juno-suspend $(DESTDIR)/usr/share/suspend-then-hibernate/juno-suspend
+	install -Dpm 0644 alsaucm/90restore-alsa $(DESTDIR)/etc/apt/apt.conf.d/90restore-alsa
+	install -Dpm 0755 alsaucm/juno-restore-alsa $(DESTDIR)/usr/share/suspend-then-hibernate/juno-restore-alsa
 	install -Dpm 0644 alsaucm/HiFi.conf $(DESTDIR)/usr/share/suspend-then-hibernate/HiFi.conf
 	install -Dpm 0644 suspend-then-hibernate/juno-login.conf $(DESTDIR)/etc/systemd/logind.conf.d/juno-login.conf
 	install -Dpm 0644 suspend-then-hibernate/juno-sleep.conf $(DESTDIR)/etc/systemd/sleep.conf.d/juno-sleep.conf
@@ -114,3 +116,5 @@ uninstall:
 	rm -R $(DESTDIR)/etc/systemd/system/powertop.service.d/
 	rm -f $(DESTDIR)/etc/apt/sources.list.d/debian.sources
 	rm -f $(DESTDIR)/usr/bin/terminal-clean
+	rm -f $(DESTDIR)/etc/apt/apt.conf.d/90restore-alsa
+	rm -f $(DESTDIR)/usr/share/suspend-then-hibernate/juno-restore-alsa
