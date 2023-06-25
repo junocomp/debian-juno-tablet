@@ -1,1 +1,2 @@
 set-card-profile alsa_card.pci-0000_00_1f.3-platform-sof-essx8336 output:stereo-fallback+input:stereo-fallback
+unload-module module-suspend-on-idle
