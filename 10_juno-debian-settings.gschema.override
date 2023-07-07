@@ -15,6 +15,7 @@ show-battery-percentage = true
 [sm.puri.phosh]
 app-filter-mode = []
 automatic-high-contrast = true
+enable-suspend = true
 
 [sm.puri.phosh.notifications]
 wakeup-screen-triggers = ['category']
