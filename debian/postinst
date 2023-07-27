@@ -1,6 +1,7 @@
 #!/bin/bash
 tablet="$(awk '{print substr($0,0,3);}' /sys/class/dmi/id/bios_version)"
 tablet2="$(dmidecode -s system-manufacturer | head -1)"
+bookworm="$(cat /etc/apt/sources.list.d/mobian.sources)"
 
 # GRUB
 
@@ -55,9 +56,18 @@ udevadm trigger
 updatedb
 
 # Remove non-free from sources.list
-sed -i 's/non-free-firmware//g' /etc/apt/sources.list
-sed -i 's/non-free//g' /etc/apt/sources.list
-sed -i 's/contrib//g' /etc/apt/sources.list
+#sed -i 's/deb.debian.org//g' /etc/apt/sources.list
+#sed -i 's/non-free-firmware//g' /etc/apt/sources.list
+#sed -i 's/non-free//g' /etc/apt/sources.list
+#sed -i 's/contrib//g' /etc/apt/sources.list
+sed -i '/\<bookworm\>/d' /etc/apt/sources.list
+
+
+
+# Remove Mobian Bookworm
+if [ -f /etc/apt/sources.list.d/mobian.list ]; then
+   rm /etc/apt/sources.list.d/mobian.list;
+fi
 
 echo "Please restart tablet for updated packages to take effect"
 
