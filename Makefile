@@ -24,7 +24,7 @@ install-core:
 	install -dm755 $(DESTDIR)/etc/apt/preferences.d/
 	install -dm755 $(DESTDIR)/etc/systemd/system/powertop.service.d/
 	install -dm755 $(DESTDIR)/etc/apt/sources.list.d/
-	cp -R librem5 $(DESTDIR)/usr/share/sounds/
+	#cp -R librem5 $(DESTDIR)/usr/share/sounds/
 	install -Dpm 0755 gaudible-deb.py $(DESTDIR)/usr/bin/gaudible-deb
 	install -Dpm 0755 gaudible-flatpak.py $(DESTDIR)/usr/bin/gaudible-flatpak
 	install -Dpm 0755 check-battery $(DESTDIR)/usr/bin/check-battery
@@ -37,10 +37,7 @@ install-core:
 	install -Dpm 0644 rules/99-inverted-touchscreen.rules $(DESTDIR)/etc/udev/rules.d/99-inverted-touchscreen.rules
 	install -Dpm 0644 rules/70-wifi-pm.rules $(DESTDIR)/etc/udev/rules.d/70-wifi-pm.rules
 	install -Dpm 0755 alsa $(DESTDIR)/usr/bin/alsa
-	#install -Dpm 0755 restore-alsa $(DESTDIR)/usr/bin/restore-alsa
 	install -Dpm 0755 alsa-info $(DESTDIR)/usr/bin/alsa-info
-	#install -Dpm 0755 restore-headphone-mic $(DESTDIR)/usr/bin/restore-headphone-mic
-	#install -Dpm 0644 restore-alsa.desktop $(DESTDIR)/etc/xdg/autostart/restore-alsa.desktop
 	install -Dpm 0644 resume $(DESTDIR)/etc/initramfs-tools/resume
 	install -Dpm 0644 10_juno-debian-settings.gschema.override $(DESTDIR)/usr/share/glib-2.0/schemas/10_juno-debian-settings.gschema.override
 	install -Dpm 0755 alsa $(DESTDIR)/usr/sbin/alsa
@@ -55,7 +52,6 @@ install-core:
 	install -Dpm 0644 suspend-then-hibernate/juno-login.conf $(DESTDIR)/etc/systemd/logind.conf.d/juno-login.conf
 	install -Dpm 0644 suspend-then-hibernate/juno-sleep.conf $(DESTDIR)/etc/systemd/sleep.conf.d/juno-sleep.conf
 	install -Dpm 0755 powertop-usb-mouse $(DESTDIR)/usr/bin/powertop-usb-mouse
-	#install -Dpm 0644 powertop-usb-mouse.service $(DESTDIR)/etc/systemd/system/powertop-usb-mouse.service
 	install -Dpm 0644 rules/squeekboard.rules $(DESTDIR)/etc/udev/rules.d/squeekboard.rules
 	install -Dpm 0644 juno.pa $(DESTDIR)/etc/pulse/default.pa.d/juno.pa
 	install -Dpm 0644 rules/external-display-power-profile.rules $(DESTDIR)/etc/udev/rules.d/external-display-power-profile.rules
@@ -66,7 +62,8 @@ install-core:
 	install -Dpm 0644 juno-kd.service $(DESTDIR)/etc/systemd/system/juno-kd.service
 	install -Dpm 0755 juno-monitor $(DESTDIR)/usr/bin/juno-monitor
 	install -Dpm 0644 override.conf $(DESTDIR)/etc/systemd/system/powertop.service.d/override.conf
-	install -Dpm 0644 debian.sources $(DESTDIR)/etc/apt/sources.list.d/debian.sources
+	install -Dpm 0644 sources/debian.sources $(DESTDIR)/etc/apt/sources.list.d/debian.sources
+	install -Dpm 0644 sources/mobian.sources $(DESTDIR)/etc/apt/sources.list.d/mobian.sources
 	install -Dpm 0755 terminal-clean $(DESTDIR)/usr/bin/terminal-clean
 	install -Dpm 0644 61-sensor-local.hwdb $(DESTDIR)/etc/udev/hwdb.d/61-sensor-local.hwdb
 
@@ -74,7 +71,7 @@ install: install-core
 
 uninstall:
 	rm -f $(DESTDIR)/usr/bin/check-battery
-	rm -R $(DESTDIR)/usr/share/sounds/librem5
+	#rm -R $(DESTDIR)/usr/share/sounds/librem5
 	rm -f $(DESTDIR)/etc/xdg/autostart/gaudible-flatpak.desktop
 	rm -f $(DESTDIR)/etc/xdg/autostart/gaudible-deb.desktop
 	rm -f $(DESTDIR)/usr/bin/gaudible-deb
@@ -85,9 +82,7 @@ uninstall:
 	rm -f $(DESTDIR)/etc/udev/rules.d/juno-turbo.rules
 	rm -f $(DESTDIR)/etc/udev/rules.d/99-inverted-touchscreen.rules
 	rm -f $(DESTDIR)/etc/udev/rules.d/70-wifi-pm.rules
-	#rm -f $(DESTDIR)/usr/bin/restore-alsa
 	rm -f $(DESTDIR)/usr/bin/alsa
-	#rm -f $(DESTDIR)/etc/xdg/autostart/restore-alsa.desktop
 	rm -f $(DESTDIR)/etc/initramfs-tools/resume
 	rm -f $(DESTDIR)/usr/share/glib-2.0/schemas/10_juno-debian-settings.gschema.override
 	rm -f $(DESTDIR)/etc/apt/sources.list.d/debian-non-free.list
@@ -115,6 +110,7 @@ uninstall:
 	rm -f $(DESTDIR)/usr/bin/juno-monitor
 	rm -R $(DESTDIR)/etc/systemd/system/powertop.service.d/
 	rm -f $(DESTDIR)/etc/apt/sources.list.d/debian.sources
+	rm -f $(DESTDIR)/etc/apt/sources.list.d/mobian.sources
 	rm -f $(DESTDIR)/usr/bin/terminal-clean
 	rm -f $(DESTDIR)/etc/apt/apt.conf.d/90restore-alsa
 	rm -f $(DESTDIR)/usr/share/suspend-then-hibernate/juno-restore-alsa
