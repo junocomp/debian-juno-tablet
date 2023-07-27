@@ -30,4 +30,4 @@ sleep-inactive-ac-type = 'nothing'
 click-policy = 'single'
 
 [org.gnome.nautilus.icon-view]
-default-zoom-level = 'large'
+default-zoom-level = 'medium'
