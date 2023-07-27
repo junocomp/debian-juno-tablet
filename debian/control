@@ -60,7 +60,9 @@ Depends: hwinfo,
 	 gstreamer1.0-vaapi,
 	 bash-completion,
 	 flatpak,
-	 unrar
+	 unrar,
+	 sound-theme-librem5,
+	 iw
 Conflicts: es8336-dkms
 Homepage: https://junocomputers.com
 Description: Drivers for Juno Tablet
