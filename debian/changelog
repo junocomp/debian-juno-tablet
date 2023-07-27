@@ -1,5 +1,5 @@
-juno-tablet (0.1.22-2) unstable; urgency=low
+juno-tablet (0.1.24-2) unstable; urgency=low
 
-  * Minor bug fixes
+  * Upgrade to Trixie
   
  -- Juno <junocomputers@outlook.com>  Thu, 27 Jul 2023 08:01:52 +0000
