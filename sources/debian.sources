@@ -1,0 +1,15 @@
+Components: main contrib non-free non-free-firmware
+Suites: trixie
+Uris: https://deb.debian.org/debian/
+Types: deb
+
+#Components: main contrib non-free non-free-firmware
+#Suites: bookworm-updates
+#Uris: https://deb.debian.org/debian/
+#Types: deb
+
+#Components: contrib non-free non-free-firmware
+#Suites: bookworm-security
+#Uris: http://security.debian.org/debian-security/
+#Types: deb
+

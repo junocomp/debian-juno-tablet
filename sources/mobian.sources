@@ -1,0 +1,4 @@
+Components: main non-free-firmware
+Suites: trixie
+Uris: https://repo.mobian.org
+Types: deb
