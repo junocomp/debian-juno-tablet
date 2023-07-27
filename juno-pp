@@ -1,20 +1,22 @@
 #!/bin/sh
 
 ac_adapter=$(acpi -a | cut -d' ' -f3 | cut -d- -f1)
+wifi="$(cat /proc/net/wireless | perl -ne '/(\w+):/ && print $1')"
 
 case "$ac_adapter" in
     on)
     /usr/bin/powerprofilesctl set balanced;
     /usr/bin/turbo-on;
-    /usr/sbin/iw wlp0s20f3 set power_save off;
-    /usr/sbin/iw wlp1s0 set power_save off;
+    /usr/sbin/iw $wifi set power_save off;
+    /usr/sbin/iw $wifi get power_save;
     echo "Power Profiles set to Balanced";
     ;;
     off)
     /usr/bin/powerprofilesctl set power-saver;
     /usr/bin/turbo-off;
-    /usr/sbin/iw wlp0s20f3 set power_save on;
-    /usr/sbin/iw wlp1s0 set power_save on;
+    /usr/sbin/iw $wifi set power_save on;
+    /usr/sbin/iw $wifi get power_save;
     echo "Power Profiles set to Power Saver";
     ;;
 esac
+
