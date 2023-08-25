@@ -34,7 +34,7 @@ install-core:
 	install -Dpm 0755 turbo/turbo-off $(DESTDIR)/usr/bin/turbo-off
 	install -Dpm 0755 turbo/turbo-stat $(DESTDIR)/usr/bin/turbo-stat
 	install -Dpm 0644 turbo/juno-turbo.rules $(DESTDIR)/etc/udev/rules.d/juno-turbo.rules
-	install -Dpm 0644 rules/99-inverted-touchscreen.rules $(DESTDIR)/etc/udev/rules.d/99-inverted-touchscreen.rules
+	#install -Dpm 0644 rules/99-inverted-touchscreen.rules $(DESTDIR)/etc/udev/rules.d/99-inverted-touchscreen.rules
 	install -Dpm 0644 rules/70-wifi-pm.rules $(DESTDIR)/etc/udev/rules.d/70-wifi-pm.rules
 	install -Dpm 0755 alsa $(DESTDIR)/usr/bin/alsa
 	install -Dpm 0755 alsa-info $(DESTDIR)/usr/bin/alsa-info
