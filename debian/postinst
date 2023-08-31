@@ -1,12 +1,12 @@
 #!/bin/bash
 tablet="$(awk '{print substr($0,0,3);}' /sys/class/dmi/id/bios_version)"
-tablet2="$(dmidecode -s system-manufacturer | head -1)"
+tablet2="$(strings /sys/firmware/acpi/tables/DSDT | grep -o -m 1 -i 'NSA2513' | sort)"
 bookworm="$(cat /etc/apt/sources.list.d/mobian.sources)"
 
 # GRUB
 
 case "$tablet2" in
-     Digitek)
+     NSA2513)
      sed -i -e '/GRUB_CMDLINE_LINUX_DEFAULT/d' /etc/default/grub;
      sed -i '/\GRUB_DISTRIBUTOR/a GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i8042.nopnp pcie_port_pm=off"' /etc/default/grub
      update-grub
