@@ -1,5 +1,6 @@
-juno-tablet (0.1.24-2) unstable; urgency=low
+juno-tablet (0.1.26) unstable; urgency=low
 
   * Upgrade to Trixie
+  * Optimized DA217 detection
   
- -- Juno <junocomputers@outlook.com>  Thu, 27 Jul 2023 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Thu, 31 Aug 2023 08:01:52 +0000
