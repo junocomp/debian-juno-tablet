@@ -23,6 +23,9 @@ wakeup-screen-triggers = ['category']
 [sm.puri.Chatty]
 experimental-features = true
 
+[org.gnome.desktop.wm.preferences]
+button-layout = 'appmenu:maximize,close'
+
 [org.gnome.settings-daemon.plugins.power]
 sleep-inactive-ac-type = 'nothing'
 
