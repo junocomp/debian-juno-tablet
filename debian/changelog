@@ -1,6 +1,6 @@
-juno-tablet (0.1.26) unstable; urgency=low
+juno-tablet (0.1.26-1) unstable; urgency=low
 
-  * Upgrade to Trixie
   * Optimized DA217 detection
+  * Added Maximize windows option for Dock mode
   
- -- Juno <junocomputers@outlook.com>  Thu, 31 Aug 2023 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Sun, 17 Sep 2023 08:01:52 +0000
