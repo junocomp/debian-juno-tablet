@@ -24,7 +24,6 @@ install-core:
 	install -dm755 $(DESTDIR)/etc/apt/preferences.d/
 	install -dm755 $(DESTDIR)/etc/systemd/system/powertop.service.d/
 	install -dm755 $(DESTDIR)/etc/apt/sources.list.d/
-	#cp -R librem5 $(DESTDIR)/usr/share/sounds/
 	install -Dpm 0755 gaudible-deb.py $(DESTDIR)/usr/bin/gaudible-deb
 	install -Dpm 0755 gaudible-flatpak.py $(DESTDIR)/usr/bin/gaudible-flatpak
 	install -Dpm 0755 check-battery $(DESTDIR)/usr/bin/check-battery
@@ -66,12 +65,12 @@ install-core:
 	install -Dpm 0644 sources/mobian.sources $(DESTDIR)/etc/apt/sources.list.d/mobian.sources
 	install -Dpm 0755 terminal-clean $(DESTDIR)/usr/bin/terminal-clean
 	install -Dpm 0644 61-sensor-local.hwdb $(DESTDIR)/etc/udev/hwdb.d/61-sensor-local.hwdb
+	install -Dpm 0644 00-gnome-usage-priority $(DESTDIR)/etc/apt/preferences.d/00-gnome-usage-priority
 
 install: install-core
 
 uninstall:
 	rm -f $(DESTDIR)/usr/bin/check-battery
-	#rm -R $(DESTDIR)/usr/share/sounds/librem5
 	rm -f $(DESTDIR)/etc/xdg/autostart/gaudible-flatpak.desktop
 	rm -f $(DESTDIR)/etc/xdg/autostart/gaudible-deb.desktop
 	rm -f $(DESTDIR)/usr/bin/gaudible-deb
@@ -114,3 +113,4 @@ uninstall:
 	rm -f $(DESTDIR)/usr/bin/terminal-clean
 	rm -f $(DESTDIR)/etc/apt/apt.conf.d/90restore-alsa
 	rm -f $(DESTDIR)/usr/share/suspend-then-hibernate/juno-restore-alsa
+	rm -f $(DESTDIR)/etc/apt/preferences.d/00-gnome-usage-priority
