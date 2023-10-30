@@ -19,7 +19,7 @@ case "$dp" in
 esac
 
 # HDMI-1
-case "$dp" in
+case "$hdmi1" in
     connected)
     /usr/bin/powerprofilesctl set balanced;
     /usr/bin/turbo-on;
@@ -33,7 +33,7 @@ case "$dp" in
 esac
 
 # HDMI-2
-case "$dp" in
+case "$hdmi2" in
     connected)
     /usr/bin/powerprofilesctl set balanced;
     /usr/bin/turbo-on;
