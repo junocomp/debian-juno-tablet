@@ -2,3 +2,4 @@ Components: main non-free-firmware
 Suites: trixie
 Uris: https://repo.mobian.org
 Types: deb
+Signed-By: /etc/apt/trusted.gpg.d/mobian-archive-keyring.gpg
