@@ -1,6 +1,7 @@
-juno-tablet (0.1.28-1) unstable; urgency=low
+juno-tablet (0.1.30) unstable; urgency=low
 
   * 00-gnome-usage-priority
   * Added Type=oneshot to powertop override.conf
+  * Fixed Signed-By error
   
- -- Juno <junocomputers@outlook.com>  Thu, 12 Oct 2023 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Fri, 10 Nov 2023 08:01:52 +0000
