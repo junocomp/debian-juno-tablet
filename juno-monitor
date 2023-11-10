@@ -11,11 +11,11 @@ case "$dp" in
     /usr/bin/turbo-on;
     echo "Display Port Connected";
     ;;
-    disconnected)
-    /usr/bin/powerprofilesctl set power-saver;
-    /usr/bin/juno-pp
-    echo "Display Port Connected"
-    ;;
+#    disconnected)
+#    /usr/bin/powerprofilesctl set power-saver;
+#    /usr/bin/juno-pp
+#    echo "Display Port Connected"
+#    ;;
 esac
 
 # HDMI-1
@@ -25,11 +25,11 @@ case "$hdmi1" in
     /usr/bin/turbo-on;
     echo "Display Port Connected";
     ;;
-    disconnected)
-    /usr/bin/powerprofilesctl set power-saver;
-    /usr/bin/juno-pp
-    echo "Display Port Connected"
-    ;;
+ #   disconnected)
+ #   /usr/bin/powerprofilesctl set power-saver;
+ #   /usr/bin/juno-pp
+ #   echo "Display Port Connected"
+ #   ;;
 esac
 
 # HDMI-2
@@ -39,9 +39,9 @@ case "$hdmi2" in
     /usr/bin/turbo-on;
     echo "Display Port Connected";
     ;;
-    disconnected)
-    /usr/bin/powerprofilesctl set power-saver;
-    /usr/bin/juno-pp
-    echo "Display Port Connected"
-    ;;
+#    disconnected)
+#    /usr/bin/powerprofilesctl set power-saver;
+#    /usr/bin/juno-pp
+#    echo "Display Port Connected"
+#    ;;
 esac
