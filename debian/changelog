@@ -1,8 +1,5 @@
-juno-tablet (0.1.32) unstable; urgency=low
+juno-tablet (0.1.34) unstable; urgency=low
 
-  * 00-gnome-usage-priority
-  * Added Type=oneshot to powertop override.conf
-  * Fixed Signed-By error
-  * Added batman dependency
+  * Set display idle to 4 minutes
   
- -- Juno <junocomputers@outlook.com>  Wed, 13 Dec 2023 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Fri, 2 Feb 2024 08:01:52 +0000
