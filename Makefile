@@ -38,7 +38,7 @@ install-core:
 	install -Dpm 0755 alsa $(DESTDIR)/usr/bin/alsa
 	install -Dpm 0755 alsa-info $(DESTDIR)/usr/bin/alsa-info
 	install -Dpm 0644 resume $(DESTDIR)/etc/initramfs-tools/resume
-	install -Dpm 0644 10_juno-debian-settings.gschema.override $(DESTDIR)/usr/share/glib-2.0/schemas/10_juno-debian-settings.gschema.override
+	install -Dpm 0644 10_juno-debian-settings.gschema.override $(DESTDIR)/usr/share/glib-2.0/schemas/20_juno-debian-settings.gschema.override
 	install -Dpm 0755 alsa $(DESTDIR)/usr/sbin/alsa
 	install -Dpm 0644 juno-env.conf $(DESTDIR)/etc/environment.d/juno-env.conf
 	install -Dpm 0644 rules/power-profiles.rules $(DESTDIR)/etc/udev/rules.d/power-profiles.rules
@@ -83,7 +83,7 @@ uninstall:
 	rm -f $(DESTDIR)/etc/udev/rules.d/70-wifi-pm.rules
 	rm -f $(DESTDIR)/usr/bin/alsa
 	rm -f $(DESTDIR)/etc/initramfs-tools/resume
-	rm -f $(DESTDIR)/usr/share/glib-2.0/schemas/10_juno-debian-settings.gschema.override
+	rm -f $(DESTDIR)/usr/share/glib-2.0/schemas/20_juno-debian-settings.gschema.override
 	rm -f $(DESTDIR)/etc/apt/sources.list.d/debian-non-free.list
 	rm -f $(DESTDIR)/etc/udev/hwdb.d/61-sensor-local.hwdb
 	rm -f $(DESTDIR)/usr/sbin/alsa
