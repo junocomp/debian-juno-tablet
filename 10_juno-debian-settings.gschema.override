@@ -2,6 +2,9 @@
 # Juno Computers US & UK #
 ##########################
 
+[org.gnome.desktop.session]
+idle-delay = 240
+
 [org.gnome.desktop.sound]
 allow-volume-above-100-percent = true
 theme-name = 'librem5'
