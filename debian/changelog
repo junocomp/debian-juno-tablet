@@ -1,5 +1,6 @@
-juno-tablet (0.1.34-1) unstable; urgency=low
+juno-tablet (0.1.34-2) unstable; urgency=low
 
   * Set display idle to 4 minutes
+  * Added libglib2.0-bin 
   
- -- Juno <junocomputers@outlook.com>  Fri, 2 Feb 2024 08:01:52 +0000
+ -- Juno <junocomputers@outlook.com>  Sat, 3 Feb 2024 08:01:52 +0000
